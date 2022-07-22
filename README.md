@@ -1,3 +1,3 @@
 # github-finder
 
-Live: https://github-profile-finder-dm.netlify.app/
+Live: https://github-finder-dm.netlify.app/

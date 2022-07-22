@@ -1,10 +1,12 @@
 const btn = document.querySelector('#button');
 const input = document.querySelector('#input');
 const ui = new UI();
+const publicRepos = new UI();
 
 btn.addEventListener('click', e => {
   e.preventDefault();
-  const userName = input.value;
+  // const userName = input.value;
+  const userName = "dabananda";
   if (userName != '') {
     fetch(`https://api.github.com/users/${userName}`)
       .then(response => response.json())
@@ -16,8 +18,8 @@ btn.addEventListener('click', e => {
         } else {
           // Show profile
           input.value = '';
-          console.log(data);
           ui.showProfile(data);
+          ui.publicRepos(data.repos_url);
         }
       });
   } else {

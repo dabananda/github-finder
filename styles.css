@@ -1,9 +1,15 @@
+a {
+  text-decoration: none;
+}
+
 footer {
-  position:absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
 }
 
-footer a {
-  text-decoration: none;
+@media (max-width: 768px) {
+  footer {
+    position: relative;
+  }
 }

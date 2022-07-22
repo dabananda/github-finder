@@ -16,6 +16,7 @@ btn.addEventListener('click', e => {
         } else {
           // Show profile
           input.value = '';
+          console.log(data);
           ui.showProfile(data);
         }
       });

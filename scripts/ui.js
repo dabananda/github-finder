@@ -77,7 +77,7 @@ class UI {
             license,
           } = repo;
           this.repositories.innerHTML += `
-           <div class="card mx-auto my-4" style="max-width: 540px">
+           <div class="card mx-auto mb-5" style="max-width: 540px">
             <div class="card-header">
               ${full_name}
             </div>

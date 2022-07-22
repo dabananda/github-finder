@@ -2,14 +2,11 @@ a {
   text-decoration: none;
 }
 
-footer {
-  position: absolute;
-  bottom: -1;
-  width: 100%;
+.main {
+  min-height: 100vh;
+  margin-bottom: -25px;
 }
 
-@media (max-width: 768px) {
-  footer {
-    position: relative;
-  }
+footer {
+  height: 25px;
 }

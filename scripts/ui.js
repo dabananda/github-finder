@@ -101,8 +101,9 @@ class UI {
       });
   }
 
-  clearProfile() {
+  clearField() {
     this.profile.innerHTML = '';
+    this.repositories.innerHTML = '';
   }
 
   showAlert(message, className) {

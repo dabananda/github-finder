@@ -5,8 +5,7 @@ const publicRepos = new UI();
 
 btn.addEventListener('click', e => {
   e.preventDefault();
-  // const userName = input.value;
-  const userName = "dabananda";
+  const userName = input.value;
   if (userName != '') {
     fetch(`https://api.github.com/users/${userName}`)
       .then(response => response.json())
@@ -16,15 +15,15 @@ btn.addEventListener('click', e => {
           input.value = '';
           ui.showAlert('User not found!', 'alert alert-danger');
         } else {
-          // Show profile
+          // Clearing previous data
+          ui.clearField();
           input.value = '';
+          // Show profile
           ui.showProfile(data);
           ui.publicRepos(data.repos_url);
         }
       });
   } else {
-    // Clear input
     alert('Please enter a username');
-    ui.clearProfile();
   }
 });

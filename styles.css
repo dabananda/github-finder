@@ -2,6 +2,12 @@ a {
   text-decoration: none;
 }
 
+.items {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
 .main {
   min-height: 100vh;
   margin-bottom: -25px;
@@ -9,4 +15,21 @@ a {
 
 footer {
   height: 25px;
+}
+
+@media (min-width: 768px) {
+  .input-div {
+    width: 50%;
+  }
+
+  .items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .item {
+    margin: 8px auto;
+  }
 }

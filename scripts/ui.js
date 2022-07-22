@@ -23,20 +23,20 @@ class UI {
             <a class="btn btn-primary btn-small" href="${data.html_url}" target="_blank">View Profile</a>
           </div>
         </div>
-        <div class="d-flex justify-content-between my-3 px-2">
-          <p>
+        <div class="items">
+          <p class="item">
             Followers
             <span class="badge bg-primary">${data.followers}</span>
           </p>
-          <p>
+          <p class="item">
             Following
             <span class="badge bg-primary">${data.following}</span>
           </p>
-          <p>
+          <p class="item">
             Public gists
             <span class="badge bg-primary">${data.public_gists}</span>
           </p>
-          <p>
+          <p class="item">
             Public repos
             <span class="badge bg-primary">${data.public_repos}</span>
           </p>
@@ -77,24 +77,26 @@ class UI {
             license,
           } = repo;
           this.repositories.innerHTML += `
-           <div class="card mx-auto mb-5" style="max-width: 540px">
-            <div class="card-header">
-              ${full_name}
+           <div class="col-md-6 col-lg-4 mt-4 mb-5">
+            <div class="card mx-auto h-100">
+              <div class="card-header">
+                ${full_name}
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Repository name: ${name}</h5>
+                <p class="card-text">Description: ${description}</p>
+                <a href="${html_url}" class="btn btn-primary">View ${name} on GitHub</a>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Created at: ${createdDate}</li>
+                <li class="list-group-item">Pushed at: ${pushedDate}</li>
+                <li class="list-group-item">Updated at: ${updatedDate}</li>
+                <li class="list-group-item">SSH URl: ${ssh_url}</li>
+                <li class="list-group-item">Clone URl: ${clone_url}</li>
+                <li class="list-group-item">Language: ${language}</li>
+                <li class="list-group-item">License: ${license}</li>
+              </ul>
             </div>
-            <div class="card-body">
-              <h5 class="card-title">Repository name: ${name}</h5>
-              <p class="card-text">Description: ${description}</p>
-              <a href="${html_url}" class="btn btn-primary">View ${name} on GitHub</a>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Created at: ${createdDate}</li>
-              <li class="list-group-item">Pushed at: ${pushedDate}</li>
-              <li class="list-group-item">Updated at: ${updatedDate}</li>
-              <li class="list-group-item">SSH URl: ${ssh_url}</li>
-              <li class="list-group-item">Clone URl: ${clone_url}</li>
-              <li class="list-group-item">Language: ${language}</li>
-              <li class="list-group-item">License: ${license}</li>
-            </ul>
           </div>
           `;
         });
@@ -116,5 +118,6 @@ class UI {
         <h3>Ops... ${message}</h3>
       </div>
     `;
+    this.repositories.innerHTML = '';
   }
 }
